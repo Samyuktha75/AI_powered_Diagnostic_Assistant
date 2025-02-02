@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription Records</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Logout Button -->
+        <div class="logout-container">
+            <a href="{{ url_for('login') }}" class="logout-btn">Logout</a>
+        </div>
+
+        <h1>Records</h1>
+
+        <table class="records-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Prescription</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if records %}
+                    {% for record in records %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ record.get('date', 'N/A') }}</td>
+                        <td>{{ record.get('prescription', 'N/A') }}</td>
+                        <td>
+                            <!-- View Button -->
+                            <a href="{{ url_for('records', action='view', record_id=loop.index0) }}" class="view-btn">View</a>
+                            <!-- Delete Button -->
+                            <a href="{{ url_for('records', action='delete', record_id=loop.index0) }}" class="delete-btn" onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="4" style="text-align: center;">No records found.</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+
+        <!-- Button to create a new record -->
+        <div class="new-record-container">
+            <button class="new-record-btn" onclick="window.location.href='{{ url_for('symptoms') }}';">Create New Record</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/script.js" defer></script> <!-- Link to JavaScript file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form id="registrationForm" method="POST" action="/registration">
+            <h2>Personal Information</h2>
+
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+
+            <h2>Medical Information</h2>
+
+            <label for="bloodGroup">Blood Group</label>
+            <select id="bloodGroup" name="bloodGroup" required>
+                <option value="">Select</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+
+            <div class="checkbox-group">
+                <div>
+                    <input type="checkbox" id="diabetes" name="medicalInfo" value="Diabetes">
+                    <label for="diabetes">Diabetes</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="bloodPressure" name="medicalInfo" value="Blood Pressure">
+                    <label for="bloodPressure">Blood Pressure</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="thyroid" name="medicalInfo" value="Thyroid">
+                    <label for="thyroid">Thyroid</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="migraine" name="medicalInfo" value="Migraine">
+                    <label for="migraine">Migraine</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="heartProblems" name="medicalInfo" value="Heart Problems">
+                    <label for="heartProblems">Heart Problems</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="cancer" name="medicalInfo" value="Cancer">
+                    <label for="cancer">Cancer</label>
+                </div>
+            </div>
+
+            <label for="medicalAllergies">Any Medical Allergies</label>
+            <select id="medicalAllergies" name="medicalAllergies" onchange="toggleOtherMedicalAllergyInput()" required>
+                <option value="">Select</option>
+                <option value="Penicillin">Penicillin</option>
+                <option value="Aspirin">Aspirin</option>
+                <option value="Sulfa Drugs">Sulfa Drugs</option>
+                <option value="Ibuprofen">Ibuprofen</option>
+                <option value="Codeine">Codeine</option>
+                <option value="None">None</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="text" id="otherMedicalAllergy" name="otherMedicalAllergy" placeholder="Specify other allergies" style="display: none;">            
+
+            <h2>Lifestyle Information</h2>
+
+            <div class="radio-group">
+                <label>Alcoholic</label>
+                <div>
+                    <input type="radio" id="alcoholicYes" name="alcoholic" value="Yes">
+                    <label for="alcoholicYes">Yes</label>
+                    <input type="radio" id="alcoholicNo" name="alcoholic" value="No">
+                    <label for="alcoholicNo">No</label>
+                </div>
+            </div>
+            
+            <div class="radio-group">
+                <label>Smoker</label>
+                <div>
+                    <input type="radio" id="smokerYes" name="smoker" value="Yes">
+                    <label for="smokerYes">Yes</label>
+                    <input type="radio" id="smokerNo" name="smoker" value="No">
+                    <label for="smokerNo">No</label>
+                </div>
+            </div>
+
+            <h2>Basic Information</h2>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+
+            <!-- Link for users who already have an account -->
+            <p style="text-align: center; margin-top: 20px;">
+                Already have an account? <a href="/login" style="color: #007BFF; text-decoration: none;">Log in here</a>.
+            </p>
+        </form>
+    </div>
+</body>
+</html>

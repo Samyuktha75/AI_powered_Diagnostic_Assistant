@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/script.js" defer></script> <!-- Link to the JavaScript file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm" method="POST" action="/login">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <p style="text-align: center; margin-top: 15px;">
+            New User? <a href="{{ url_for('registration') }}" style="color: #007BFF; text-decoration: none;">Register here</a>.
+        </p>
+    </div>
+</body>
+</html>

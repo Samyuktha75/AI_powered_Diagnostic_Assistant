@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms Information</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Close Button -->
+        <div class="close-container">
+            <a href="/records" class="close-btn" onclick="return confirmCancel()">Close</a>
+        </div>
+
+        <h1>Symptoms Information</h1>
+        <form id="measurementForm" method="POST" action="/symptoms">
+            <label for="temperature">Temperature (°F)</label>
+            <div class="input-group">
+                <input type="text" id="temperature" name="temperature" placeholder="Your Temperature" readonly>
+                <button type="button" id="getTemperature">Get Measurement</button>
+            </div>
+        
+            <label for="weight">Weight (kg)</label>
+            <div class="input-group">
+                <input type="text" id="weight" name="weight" placeholder="Your Weight" readonly>
+                <button type="button" id="getWeight">Get Measurement</button>
+            </div>
+        
+            <label for="oxygenLevel">Oxygen Level (%)</label>
+            <div class="input-group">
+                <input type="text" id="oxygenLevel" name="oxygenLevel" placeholder="Your Oxygen Level" readonly>
+                <button type="button" id="getOxygenLevel">Get Measurement</button>
+            </div>
+        
+            <label for="pulseRate">Pulse Rate (bpm)</label>
+            <div class="input-group">
+                <input type="text" id="pulseRate" name="pulseRate" placeholder="Your Pulse Rate" readonly>
+                <button type="button" id="getPulseRate">Get Measurement</button>
+            </div>
+
+            <label for="headache">Headache</label>
+            <select id="headache" name="headache" required>
+                <option value="">Select</option>
+                <option value="None">None</option>
+                <option value="Mild">Mild</option>
+                <option value="Severe">Severe</option>
+            </select>
+
+            <label for="nausea">Nausea</label>
+            <select id="nausea" name="nausea" required>
+                <option value="">Select</option>
+                <option value="None">None</option>
+                <option value="Occasional">Occasional</option>
+                <option value="Frequent">Frequent</option>
+            </select>
+
+            <label>Cold Symptoms</label>
+            <div>
+                <input type="checkbox" id="runnyNose" name="coldSymptoms" value="Runny Nose">
+                <label for="runnyNose">Runny Nose</label>
+            </div>
+            <div>
+                <input type="checkbox" id="sneezing" name="coldSymptoms" value="Sneezing">
+                <label for="sneezing">Sneezing</label>
+            </div>
+            <div>
+                <input type="checkbox" id="soreThroat" name="coldSymptoms" value="Sore Throat">
+                <label for="soreThroat">Sore Throat</label>
+            </div>
+            <div>
+                <input type="checkbox" id="congestion" name="coldSymptoms" value="Congestion">
+                <label for="congestion">Congestion</label>
+            </div>
+            <div>
+                <input type="checkbox" id="postNasalDrip" name="coldSymptoms" value="Post-Nasal Drip">
+                <label for="postNasalDrip">Post-Nasal Drip</label>
+            </div>
+
+            <label for="cough">Cough</label>
+            <select id="cough" name="cough" required>
+                <option value="">Select</option>
+                <option value="None">None</option>
+                <option value="Dry">Dry</option>
+                <option value="Wet">Wet</option>
+                <option value="Severe">Severe</option>
+            </select>
+
+            <label for="fatigue">Fatigue</label>
+            <select id="fatigue" name="fatigue" required>
+                <option value="">Select</option>
+                <option value="None">None</option>
+                <option value="Mild">Mild</option>
+                <option value="Severe">Severe</option>
+            </select>
+
+            <label for="stomachPain">Stomach Pain</label>
+            <select id="stomachPain" name="stomachPain" required>
+                <option value="">Select</option>
+                <option value="None">None</option>
+                <option value="Mild">Mild discomfort</option>
+                <option value="Moderate">Moderate pain</option>
+                <option value="Severe">Severe pain</option>
+                <option value="Cramping">Cramping</option>
+                <option value="Bloating">Bloating</option>
+                <option value="Sharp">Sharp stabbing pain</option>
+            </select>
+
+            <label for="other">Other Symptoms</label>
+            <textarea id="other" name="other" placeholder="Describe any other symptoms..." rows="4"></textarea>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

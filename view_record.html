@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Record</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>View Record</h1>
+        <ul>
+            {% for key, value in record.items() %}
+            <li>
+                <strong>{{ key.replace('_', ' ').capitalize() }}:</strong> 
+                {{ value or "N/A" }}
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('records') }}" class="btn">Back to Records</a>
+    </div>
+</body>
+</html>

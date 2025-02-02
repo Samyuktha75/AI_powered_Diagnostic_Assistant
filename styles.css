@@ -1,0 +1,287 @@
+/* Root Variables */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #0056b3;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --background-light: #f0f8ff;
+    --text-dark: #000000;
+    --border-color: #dddddd;
+    --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    --box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Container Styles */
+.container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    max-width: 500px;
+    width: 100%;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+input, select, textarea {
+    margin-bottom: 16px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+textarea {
+    resize: vertical; /* Resizable only vertically */
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn:hover {
+    filter: brightness(90%);
+}
+
+/* Logout Button */
+.logout-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logout-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--danger-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #e60000;
+}
+
+/* Close Button */
+.close-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--danger-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #e60000;
+}
+
+/* Table Styles */
+.records-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.records-table th, .records-table td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    text-align: left;
+}
+
+.records-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.records-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.records-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Record Buttons */
+.view-btn, .delete-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.view-btn {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* New Record Button */
+.new-record-container {
+    text-align: center;
+}
+
+.new-record-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.new-record-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Radio Group Styles */
+.radio-group {
+    margin-bottom: 15px;
+}
+
+.radio-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.radio-group div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.radio-group div input {
+    margin-right: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    .records-table th, .records-table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    input, select, textarea {
+        font-size: 14px;
+    }
+
+    button, .new-record-btn {
+        font-size: 14px;
+    }
+
+    .view-btn, .delete-btn {
+        font-size: 12px;
+    }
+}
+        
